@@ -4,9 +4,9 @@ import pickle
 
 # Load models
 models = {
-    "Logistic Regression": pickle.load(open("D:/ODC/projct2/artifacts/lr.pkl", 'rb')),
-    "SVM": pickle.load(open("D:/ODC/projct2/artifacts/svc.pkl", 'rb')),
-    "Decision Tree": pickle.load(open("D:/ODC/projct2/artifacts/dt.pkl", 'rb'))
+    "Logistic Regression": pickle.load(open("artifacts/lr.pkl", 'rb')),
+    "SVM": pickle.load(open("artifacts/svc.pkl", 'rb')),
+    "Decision Tree": pickle.load(open("artifacts/dt.pkl", 'rb'))
 }
 
 # Allow user to select the desired model
