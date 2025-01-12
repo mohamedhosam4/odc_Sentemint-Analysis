@@ -1,6 +1,11 @@
 import helper
 import streamlit as st 
 import pickle
+import nltk
+
+# Download necessary NLTK resources (add this to ensure required files are available)
+nltk.download('punkt')
+nltk.download('stopwords')
 
 # Load models
 models = {
