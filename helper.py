@@ -17,8 +17,15 @@ gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
 # Load the downloaded model
 tf = pickle.load(open(MODEL_PATH, 'rb'))
 
+
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt', quiet=True)
+
+
 # Ensure NLTK resources are available
-nltk.download('punkt', quiet=True)
+#nltk.download('punkt', quiet=True)
 nltk.download('stopwords', quiet=True)
 
 # Initialize text processing tools

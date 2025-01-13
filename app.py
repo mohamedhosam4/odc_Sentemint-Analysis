@@ -5,7 +5,15 @@ import gdown
 import os
 import helper
 
-nltk.download('punkt', quiet=True)
+
+
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt', quiet=True)
+
+
+#nltk.download('punkt', quiet=True)
 nltk.download('stopwords', quiet=True)
 
 # Google Drive model links (Change these to your actual Google Drive file IDs)
