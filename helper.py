@@ -18,8 +18,8 @@ gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
 tf = pickle.load(open(MODEL_PATH, 'rb'))
 
 # Ensure NLTK resources are available
-nltk.download('punkt')
-nltk.download('stopwords')
+nltk.download('punkt', quiet=True)
+nltk.download('stopwords', quiet=True)
 
 # Initialize text processing tools
 stemmer = PorterStemmer()

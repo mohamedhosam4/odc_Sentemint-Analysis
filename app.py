@@ -5,9 +5,8 @@ import gdown
 import os
 import helper
 
-# Ensure necessary NLTK resources are available
-nltk.download('punkt')
-nltk.download('stopwords')
+nltk.download('punkt', quiet=True)
+nltk.download('stopwords', quiet=True)
 
 # Google Drive model links (Change these to your actual Google Drive file IDs)
 MODEL_URLS = {
