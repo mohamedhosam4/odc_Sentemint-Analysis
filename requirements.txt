@@ -3,3 +3,4 @@ nltk==3.9.1
 scikit-learn==1.6.1
 pillow==11.1.0
 gdown
+nltk
