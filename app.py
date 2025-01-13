@@ -7,7 +7,7 @@ import helper
 import numpy as np
 
 # تحميل الموارد اللازمة من NLTK
-ry:
+try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
     nltk.download('punkt', quiet=True)
