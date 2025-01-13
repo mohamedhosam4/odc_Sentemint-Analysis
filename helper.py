@@ -1,7 +1,7 @@
 from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 import re
 import pickle
 import nltk
@@ -23,9 +23,7 @@ try:
 except LookupError:
     nltk.download('punkt', quiet=True)
 
-
 # Ensure NLTK resources are available
-#nltk.download('punkt', quiet=True)
 nltk.download('stopwords', quiet=True)
 
 # Initialize text processing tools
@@ -42,6 +40,10 @@ def text_preprocessing(text):
     text = word_tokenize(text)  # Tokenize words
     text = [word for word in text if word not in stop_words]  # Remove stopwords
     text = [stemmer.stem(word) for word in text]  # Apply stemming
-    text = ' '.join(text)
-    text = tf.transform([text])  # Convert text into numerical representation
-    return text
+    text = ' '.join(text)  # Join words back into a string
+    
+    # Convert text into numerical representation using TF-IDF
+    text = tf.transform([text])  # Convert the text into a TF-IDF vector
+    
+    # Return the transformed text as a dense array
+    return text.toarray()
