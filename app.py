@@ -64,3 +64,13 @@ if text:
                 st.error("The review is Negative! 😞")
         except Exception as e:
             st.error(f"Error processing the text: {e}")  # Handle errors gracefully
+
+
+
+# Footer message
+st.markdown(
+    """
+    <div style="text-align: center; padding-top: 20px; font-size: 14px; color: gray;">
+        This page was created by <strong>Mohamed Hosam</strong>
+    </div>
+    """, unsafe_allow_html=True)            
