@@ -70,7 +70,7 @@ if text:
 # Footer message
 st.markdown(
     """
-    <div style="text-align: center; padding-top: 20px; font-size: 14px; color: gray;">
+    <div style="position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); font-size: 14px; color: gray;">
         This page was created by <strong>Mohamed Hosam</strong>
     </div>
-    """, unsafe_allow_html=True)            
+    """, unsafe_allow_html=True)
