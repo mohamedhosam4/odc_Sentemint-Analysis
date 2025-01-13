@@ -5,62 +5,62 @@ import gdown
 import os
 import helper
 
-# تحميل الموارد إذا لم تكن موجودة
+# Download resources if they are not already present
 try:
-    nltk.data.find('tokenizers/punkt')  # تحقق من وجود ملف punkt
+    nltk.data.find('tokenizers/punkt')  # Check if 'punkt' file exists
 except LookupError:
-    nltk.download('punkt', quiet=True)  # إذا لم يكن موجودًا، قم بتحميله
+    nltk.download('punkt', quiet=True)  # If not, download it
 
 try:
-    nltk.data.find('tokenizers/punkt_tab')  # تحقق من وجود ملف punkt_tab
+    nltk.data.find('tokenizers/punkt_tab')  # Check if 'punkt_tab' file exists
 except LookupError:
-    nltk.download('punkt_tab', quiet=True)  # إذا لم يكن موجودًا، قم بتحميله
+    nltk.download('punkt_tab', quiet=True)  # If not, download it
 
-# تحميل stopwords
+# Download stopwords
 nltk.download('stopwords', quiet=True)
 
-# روابط نماذج Google Drive
+# Google Drive model URLs (Make sure these are publicly accessible)
 MODEL_URLS = {
     "Logistic Regression": "https://drive.google.com/uc?id=1887AgoAPiU5QxcjAt6WJVC0sXfIbMXl1",
     "SVM": "https://drive.google.com/uc?id=17Y3eoOCUeEaN1CpIMCz3dFuslhafuJWK",
     "Decision Tree": "https://drive.google.com/uc?id=11WV6qGw2KTGDoEzOY_C9oBdBAQi--MH7"
 }
 
-# تحميل النموذج فقط مرة واحدة
+# Load the model only once
 @st.cache_resource
 def load_model(model_name):
-    """تحميل النموذج من Google Drive فقط مرة واحدة."""
+    """Download and load the ML model from Google Drive only once."""
     model_path = f"{model_name}.pkl"
 
-    # تحميل النموذج إذا لم يكن موجودًا
+    # Download the model if it doesn't already exist
     if not os.path.exists(model_path):
         gdown.download(MODEL_URLS[model_name], model_path, quiet=False)
 
-    # تحميل النموذج من الملف
+    # Load the model from the file
     return pickle.load(open(model_path, 'rb'))
 
-# السماح للمستخدم باختيار النموذج
+# Allow the user to select the desired model
 model_choice = st.selectbox("Select the model you want to use:", list(MODEL_URLS.keys()))
 
-# تحميل النموذج المحدد (cached)
+# Load the selected model (cached)
 model = load_model(model_choice)
 
-# إدخال المستخدم للنص
+# User input for the review text
 text = st.text_input("Enter your review:")
 
-# معالجة النص المدخل
+# Process the input text
 if text:
-    processed_text = helper.text_preprocessing(text)
+    processed_text = helper.text_preprocessing(text)  # Preprocess the input text
 
-    # إجراء التنبؤ
+    # Make a prediction
     if st.button("Predict"):
         try:
-            pred = model.predict(processed_text)[0]
+            pred = model.predict(processed_text)[0]  # Get the prediction from the model
             
-            # عرض الرسالة المناسبة بناءً على التنبؤ
+            # Display the appropriate message based on the prediction
             if pred == 1:
                 st.success("The review is Positive! 😊")
             else:
                 st.error("The review is Negative! 😞")
         except Exception as e:
-            st.error(f"Error processing the text: {e}")
+            st.error(f"Error processing the text: {e}")  # Handle errors gracefully
