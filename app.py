@@ -22,7 +22,7 @@ nltk.download('stopwords', quiet=True)
 # Google Drive model URLs (Make sure these are publicly accessible)
 MODEL_URLS = {
     "Logistic Regression": "https://drive.google.com/uc?id=1887AgoAPiU5QxcjAt6WJVC0sXfIbMXl1",
-    "SVM": "https://drive.google.com/uc?id=17Y3eoOCUeEaN1CpIMCz3dFuslhafuJWK",
+    #"SVM": "https://drive.google.com/uc?id=17Y3eoOCUeEaN1CpIMCz3dFuslhafuJWK",
     "Decision Tree": "https://drive.google.com/uc?id=11WV6qGw2KTGDoEzOY_C9oBdBAQi--MH7"
 }
 
