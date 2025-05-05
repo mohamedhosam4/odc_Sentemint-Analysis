@@ -28,8 +28,9 @@ This project implements a sentiment analysis web application built using **Strea
     ```
 
 ## 📸 App Screenshot:
-![Screenshot 1](images/Screenshot%202025-05-06%20005715.png)
-![Screenshot 2](images/Screenshot%202025-05-06%20005646.png)
+![Screenshot 1](https://github.com/mohamedhosam4/odc_Sentemint-Analysis/blob/main/Screenshot%202025-05-06%20005646.png)
+![Screenshot 2](https://github.com/mohamedhosam4/odc_Sentemint-Analysis/blob/main/Screenshot%202025-05-06%20005715.png)
+
 
 
 
