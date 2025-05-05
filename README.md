@@ -28,7 +28,9 @@ This project implements a sentiment analysis web application built using **Strea
     ```
 
 ## 📸 App Screenshot:
-![App Screenshot](Screenshot 2025-05-06 005646.png,Screenshot 2025-05-06 005715.png)
+![App Screenshot](Screenshot 2025-05-06 005646.png)
+![App Screenshot](Screenshot 2025-05-06 005715.png)
+
 
 ## 📝 Acknowledgments:
 This project was developed as part of the **AI and Data Science Scholarship** from **Orange Digital Center**, in collaboration with **Amit Learning**. Special thanks to the mentors and team for their invaluable guidance and support.
